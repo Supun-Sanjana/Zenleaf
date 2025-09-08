@@ -21,4 +21,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Shop page
+Route::get('/shop', function () {
+    return view('shop'); // loads resources/views/shop.blade.php
+})->name('shop'); // this defines the route name "shop"
+
+// Seller dashboard page
+Route::get('/seller', function () {
+    return view('seller'); // loads resources/views/seller.blade.php
+})->name('seller');
+
+
 require __DIR__.'/auth.php';

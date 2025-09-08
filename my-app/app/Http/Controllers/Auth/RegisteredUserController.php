@@ -30,24 +30,33 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'role' => 'required|in:customer,seller',
-            'approved' => $request->role === 'seller' ? false : true, // auto-approve customers
+
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role, // save role
+            'type' => $request->type,   // map role → type
+            'approved' => $request->role === 'seller' ? false : true, // put it here instead ✅
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        if ($user->type === 'customer') {
+            return redirect()->route('shopping.home'); // your shopping page route
+        } else if ($user->type === 'seller') {
+            return redirect()->route('seller.dashboard'); // seller dashboard route
+        }
+
+        // return redirect(route('dashboard', absolute: false));
     }
+
 }

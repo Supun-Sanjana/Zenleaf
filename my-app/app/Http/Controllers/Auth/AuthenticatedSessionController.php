@@ -14,8 +14,22 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): View
+    public function create(): View|RedirectResponse
     {
+        // Redirect if already logged in
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            if ($user->type === 'customer') {
+                return redirect()->route('shop');
+            } elseif ($user->type === 'seller') {
+                return redirect()->route('seller');
+            }
+
+            return redirect('/dashboard');
+        }
+
+
         return view('auth.login');
     }
 
@@ -28,7 +42,20 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        $user = Auth::user();
+
+        // Redirect based on user type
+        if ($user->type === 'customer') {
+            return redirect()->route('shop'); // your shopping page route
+        } elseif ($user->type === 'seller') {
+            return redirect()->route('seller'); // seller dashboard route
+        }
+
+
+        // fallback
+        // return redirect()->intended('/dashboard');
+
+        // return redirect()->intended(route('dashboard', absolute: false));
     }
 
     /**
@@ -44,4 +71,6 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+
+
 }
