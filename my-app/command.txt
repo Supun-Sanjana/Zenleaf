@@ -1,0 +1,12 @@
+create migration - php artisan make:model Category -m
+### this will genarate migration file and modle file
+
+INFO  Model [H:\Zenleaf - v1\New folder\Zenleaf\my-app\app\Models\Category.php] created successfully.
+
+INFO  Migration [H:\Zenleaf - v1\New folder\Zenleaf\my-app\database\migrations\2025_09_09_150910_create_categories_table.php] created successfully.
+
+
+add columns to table -> in migration file up function
+
+$table->string('name');
+
