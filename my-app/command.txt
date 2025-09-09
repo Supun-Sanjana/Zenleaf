@@ -5,8 +5,84 @@ INFO  Model [H:\Zenleaf - v1\New folder\Zenleaf\my-app\app\Models\Category.php] 
 
 INFO  Migration [H:\Zenleaf - v1\New folder\Zenleaf\my-app\database\migrations\2025_09_09_150910_create_categories_table.php] created successfully.
 
-
+#################################
 add columns to table -> in migration file up function
 
 $table->string('name');
+
+##################################
+add foreign key
+
+$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+##################################
+$table->string('name');
+$table->string('slug')->unique();
+
+A slug is a URL-friendly version of a string, usually generated from the name. It's often used in URLs to make them readable and SEO-friendly. For example:
+
+Name: My First Blog Post
+Slug: my-first-blog-post
+
+Here’s what happens in your code:
+$table->string('name'); — Stores the original name, e.g., "My First Blog Post".
+$table->string('slug')->unique(); — Stores the URL-friendly version of that name and ensures it is unique in the database, so you don’t have two posts with the same slug.
+
+##################################
+column modifiers (properties) to customize behavior.
+
+{
+
+    unique() - - - -  Ensures the column value is unique across the table.
+
+    $table->string('email')->unique();
+
+    ##################################
+    nullable() - - - - Allows the column to accept NULL values.
+
+    $table->string('middle_name')->nullable();
+
+    ##################################
+    default(value) - - - - Sets a default value if none is provided.
+
+    $table->string('status')->default('pending');
+
+    ##################################
+    primary() - - - - Makes the column a primary key.
+
+    $table->bigIncrements('id')->primary();
+
+    ##################################
+    foreignId() with constrained() - - - - Defines a foreign key relationship.
+
+    $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
+    ##################################
+    unsigned() - - - Makes a numeric column unsigned (cannot be negative).
+
+    $table->integer('votes')->unsigned();
+
+    #################################
+    comment() - - - Adds a comment to describe the column (useful for DB documentation).
+
+    $table->string('role')->comment('User role, e.g., admin, editor, subscriber');
+
+    #################################
+    after('column') - - - - Places this column after a specific column (MySQL only).
+
+    $table->string('nickname')->after('name');
+
+    #################################
+    unique + nullable + default - - - You can chain multiple modifiers:
+
+    $table->string('slug')->unique()->nullable()->default('default-slug');
+}
+
+****************************************************************************
+ganarate migration ----------- php artisan migrate
+...............................................................
+ganarate controller ---------- php artisan make:controller ControllerName
+use --resource flag when need to create crud functions
+use --resource --model=ModelName flag when need to create Model file
+..............................................................
 
