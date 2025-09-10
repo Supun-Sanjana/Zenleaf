@@ -24,6 +24,7 @@ class User extends Authenticatable
         'password',
         'type',
         'approved',
+        'user_id'
     ];
 
     /**
@@ -48,4 +49,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected static function booted()
+{
+    static::creating(function ($user) {
+        $prefix = $user->role === 'seller' ? 'S' : 'C';
+        $user->user_id = $prefix . rand(10000, 99999);
+    });
+}
+
 }
