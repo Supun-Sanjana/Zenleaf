@@ -19,6 +19,7 @@
                 <a href="#miniature" class="text-gray-700 hover:text-emerald-600 transition-colors">Miniature</a>
                 <a href="#accessories" class="text-gray-700 hover:text-emerald-600 transition-colors">Plant Care</a>
                 <a href="#about" class="text-gray-700 hover:text-emerald-600 transition-colors">About</a>
+                <a href="discover" class="text-gray-700 hover:text-emerald-600 transition-colors">Discover</a>
             </div>
 
 

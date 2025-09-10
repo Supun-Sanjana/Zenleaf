@@ -13,8 +13,9 @@
             </div>
 
             <div>
-                <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Shop</button>
-                <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Add Product</button>
+                <a href="{{ route('dashboard') }}"><button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Dashboard</button></a>
+                <a href="{{ route('discover') }}"><button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Shop</button></a>
+                <a href="{{ route('products.create') }}"><button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Add Product</button></a>
                 <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Submit BR</button>
             </div>
 

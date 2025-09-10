@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,6 +31,19 @@ Route::get('/shop', function () {
 Route::get('/seller', function () {
     return view('seller'); // loads resources/views/seller.blade.php
 })->name('seller');
+
+Route::get('/discover', function () {
+    return view('display-product');
+})->name('discover');
+
+// Show the add product form
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+// Handle form submission
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
+Route::get('/dashboard', function (){
+    return view('seller.dashboard');
+})->name('dashboard');
 
 
 require __DIR__.'/auth.php';
