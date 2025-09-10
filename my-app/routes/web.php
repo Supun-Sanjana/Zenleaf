@@ -31,5 +31,8 @@ Route::get('/seller', function () {
     return view('seller'); // loads resources/views/seller.blade.php
 })->name('seller');
 
+Route::get('/discover', function () {
+    return view('display-product');
+})->name('discover');
 
 require __DIR__.'/auth.php';

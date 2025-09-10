@@ -13,7 +13,7 @@
             </div>
 
             <div>
-                <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Shop</button>
+                <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded"><a href="{{ route('display-product') }}">Shop</a></button>
                 <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Add Product</button>
                 <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Submit BR</button>
             </div>
