@@ -13,11 +13,11 @@
 
 <body>
     <x-logged-header />
-<x-hero />
-<x-product />
-<x-about />
-<x-contact />
-<x-footer />
+    <x-hero />
+    <x-product />
+    <x-about />
+    <x-contact />
+    <x-footer />
 </body>
 
 </html>

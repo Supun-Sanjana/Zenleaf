@@ -21,12 +21,13 @@ class AuthenticatedSessionController extends Controller
             $user = Auth::user();
 
             if ($user->type === 'customer') {
-                return redirect()->route('shop');
-            } elseif ($user->type === 'seller') {
-                return redirect()->route('seller');
-            }
+            return redirect()->route('shop');
+        }
 
-            return redirect('/dashboard');
+        if ($user->type === 'seller') {
+            return redirect()->route('seller');
+        }
+            abort(403, 'Unauthorized');
         }
 
 
@@ -47,15 +48,15 @@ class AuthenticatedSessionController extends Controller
         // Redirect based on user type
         if ($user->type === 'customer') {
             return redirect()->route('shop'); // your shopping page route
-        } elseif ($user->type === 'seller') {
+        } 
+        if ($user->type === 'seller') {
             return redirect()->route('seller'); // seller dashboard route
         }
 
+        abort(403, 'Unauthorized');
 
-        // fallback
-        return redirect()->route('dashboard'); // fallback
-        // return redirect()->intended(route('dashboard', absolute: false));
-    }
+
+         }
 
     /**
      * Destroy an authenticated session.
