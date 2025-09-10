@@ -12,12 +12,12 @@
 </head>
 
 <body>
-    <x-logged-header />
-    <x-hero />
-    <x-product />
-    <x-about />
-    <x-contact />
-    <x-footer />
+    <x-customer.logged-header />
+    <x-customer.hero />
+    <x-customer.product />
+    <x-customer.about />
+    <x-customer.contact />
+    <x-customer.footer />
 </body>
 
 </html>

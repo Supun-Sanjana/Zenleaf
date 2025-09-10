@@ -11,23 +11,23 @@
 
         <!-- Indoor Bonsai Section -->
          <section id="indoor">
-            <x-indoor/>
+            <x-customer.indoor/>
          </section>
        
 
         <!-- Flowering Bonsai Section -->
          <section id="flowering">
-             <x-flowering/>
+             <x-customer.flowering/>
          </section>
        
         <!-- Miniature Bonsai Section -->
          <section id="miniature">
-             <x-miniature/>
+             <x-customer.miniature/>
          </section>
     
         <!-- Bonsai Accessories Section -->
          <section id="accessories">
-            <x-accessories/>
+            <x-customer.accessories/>
          </section>
          
         

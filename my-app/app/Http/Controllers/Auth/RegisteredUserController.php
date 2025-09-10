@@ -53,10 +53,9 @@ class RegisteredUserController extends Controller
         if ($user->type === 'customer') {
             return redirect()->route('shopping.home'); // your shopping page route
         } else if ($user->type === 'seller') {
-            return redirect()->route('seller.dashboard'); // seller dashboard route
+            return redirect()->route('seller'); // seller dashboard route
         }
 
-        // return redirect(route('dashboard', absolute: false));
     }
 
 }

@@ -11,12 +11,12 @@
 </head>
 <body class="antialiased bg-gray-100 text-gray-900">
 
-<x-header />
-<x-hero />
-<x-product />
-<x-about />
-<x-contact />
-<x-footer />
+<x-customer.header />
+<x-customer.hero />
+<x-customer.product />
+<x-customer.about />
+<x-customer.contact />
+<x-customer.footer />
 
 </body>
 </html>
