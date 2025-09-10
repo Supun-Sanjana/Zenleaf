@@ -13,7 +13,8 @@
 
 <body>
     <x-seller.seller_header />
-    <x-seller.add-product />
+    <x-seller.dashboard />
+    
     
     
 </body>

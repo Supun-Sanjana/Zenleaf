@@ -33,7 +33,7 @@ class ProductController extends Controller
         'description' => 'nullable|string|max:255',
         'price' => 'required|numeric',
         'quantity' => 'required|integer',
-        'image' => 'nullable|image|max:2048',
+        'image' => 'required|image|max:2048',
     ]);
 
     $product = new Product();

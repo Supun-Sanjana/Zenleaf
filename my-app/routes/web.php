@@ -42,7 +42,7 @@ Route::get('/products/create', [ProductController::class, 'create'])->name('prod
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
 Route::get('/dashboard', function (){
-    return view('seller.dashboard');
+    return view('components.seller.dashboard');
 })->name('dashboard');
 
 
