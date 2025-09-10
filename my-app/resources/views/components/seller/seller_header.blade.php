@@ -13,10 +13,10 @@
             </div>
 
             <div>
-                <a href="{{ route('dashboard') }}"><button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Dashboard</button></a>
-                <a href="{{ route('discover') }}"><button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Shop</button></a>
-                <a href="{{ route('products.create') }}"><button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Add Product</button></a>
-                <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded">Submit BR</button>
+                <a href="{{ route('dashboard') }}"><button class="text-gray-700 hover:text-emerald-600 transition-colors bg-emerald-100 border border-transparent font-bold rounded-md py-2 px-4">Dashboard</button></a>
+                <a href="{{ route('discover') }}"><button class="text-gray-700 hover:text-emerald-600 transition-colors bg-emerald-100 border border-transparent font-bold rounded-md py-2 px-4">Shop</button></a>
+                <a href="{{ route('products.create') }}"><button class="text-gray-700 hover:text-emerald-600 transition-colors bg-emerald-100 border border-transparent font-bold rounded-md py-2 px-4">Add Product</button></a>
+                <button class="text-gray-700 hover:text-emerald-600 transition-colors bg-emerald-100 border border-transparent font-bold rounded-md py-2 px-4">Submit BR</button>
             </div>
 
 

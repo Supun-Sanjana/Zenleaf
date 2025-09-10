@@ -35,14 +35,14 @@
                     <div>
                         <span class="mr-10 text-xl font-bold text-gray-900">ZenLeaf</span>
                         <a href="{{ auth()->check() && trim(auth()->user()->type) === 'seller' ? route('seller') : route('shop') }}"
-                            class="text-gray-700 hover:text-emerald-600 transition-colors">
+                            class="text-gray-700 hover:text-emerald-600 transition-colors bg-emerald-100 border border-transparent font-bold rounded-md py-2 px-4">
                             Home
                         </a>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-5">
-                    <div class="flex items-center gap-2 cursor-pointer bg-emerald-400 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded">
+                    <div class="flex items-center gap-2 cursor-pointer bg-emerald-100 hover:bg-emerald-200 text-emerald-600 font-bold py-2 px-4 rounded">
                         <span class="material-symbols-outlined">
                             shopping_cart
                         </span>
