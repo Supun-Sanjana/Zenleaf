@@ -11,5 +11,6 @@
 </head>
 <body>
     <x-discover.discover-header />
+    <x-discover.page />
 </body>
 </html>

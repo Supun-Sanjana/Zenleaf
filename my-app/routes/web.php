@@ -46,4 +46,8 @@ Route::get('/dashboard', function (){
 })->name('dashboard');
 
 
+Route::get('/discover', [ProductController::class, 'show'])->name('discover');
+
+
+
 require __DIR__.'/auth.php';

@@ -51,15 +51,18 @@ class ProductController extends Controller
     $product->save();
 
     return redirect()->back()->with('success', 'Product added successfully!');
-    
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+       $products = Product::all();
+
+       // Send data to the Blade file
+        return view('components.discover.page', ['products' => $products]);
     }
 
     /**
