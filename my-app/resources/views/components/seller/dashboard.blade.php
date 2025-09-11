@@ -17,7 +17,7 @@
 <body>
     <x-seller.seller_header />
 
-    <div class="max-w-2xl mx-auto mt-20">
+    <div class="max-w-2xl mx-auto ">
         <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
 
         @if ($errors->any())
@@ -61,7 +61,7 @@
                 </tr>
             </tbody>
         </table>
-       
+
     </div>
 </body>
 
