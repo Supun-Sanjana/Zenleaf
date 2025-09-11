@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <x-discover.discover-header />
-    <x-discover.page />
+    <x-discover.discover-header class="mb-20"/>
+    <x-discover.page :products="$products" />
 </body>
 </html>

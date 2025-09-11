@@ -27,6 +27,11 @@ class User extends Authenticatable
         'user_id'
     ];
 
+    protected $attributes = [
+    'approved' => false, // ensures new model instances have approved = 0
+];
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -53,7 +58,7 @@ class User extends Authenticatable
     protected static function booted()
 {
     static::creating(function ($user) {
-        $prefix = $user->role === 'seller' ? 'S' : 'C';
+        $prefix = $user->type === 'seller' ? 'S' : 'C';
         $user->user_id = $prefix . rand(10000, 99999);
     });
 }

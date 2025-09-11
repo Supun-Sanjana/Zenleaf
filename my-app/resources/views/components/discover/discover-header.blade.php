@@ -42,12 +42,14 @@
                 </div>
 
                 <div class="flex items-center gap-5">
-                    <div class="flex items-center gap-2 cursor-pointer bg-emerald-100 hover:bg-emerald-200 text-emerald-600 font-bold py-2 px-4 rounded">
-                        <span class="material-symbols-outlined">
-                            shopping_cart
-                        </span>
-                        <button>Cart</button>
-                    </div>
+                    <a href="{{ route('cart.index') }}">
+                            <div class="flex items-center gap-2 cursor-pointer bg-emerald-100 hover:bg-emerald-200 text-emerald-600 font-bold py-2 px-4 rounded">
+                                <span class="material-symbols-outlined">
+                                    shopping_cart
+                                </span>
+                                <button>Cart</button>
+                            </div>
+                    </a>
 
                     <div>
                         @php

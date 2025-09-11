@@ -34,6 +34,7 @@ class ProductController extends Controller
         'price' => 'required|numeric',
         'quantity' => 'required|integer',
         'image' => 'required|image|max:2048',
+        'category' => 'required',
     ]);
 
     $product = new Product();
@@ -41,6 +42,7 @@ class ProductController extends Controller
     $product->description = $request->description;
     $product->price = $request->price;
     $product->quantity = $request->quantity;
+    $product->category = is_array($request->category) ? implode(',', $request->category) : $request->category;
     $product->user_id = $request->user_id;
 
     if ($request->hasFile('image')) {
@@ -62,7 +64,7 @@ class ProductController extends Controller
        $products = Product::all();
 
        // Send data to the Blade file
-        return view('components.discover.page', ['products' => $products]);
+        return view('display-product', ['products' => $products]);
     }
 
     /**

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,9 +33,9 @@ Route::get('/seller', function () {
     return view('seller'); // loads resources/views/seller.blade.php
 })->name('seller');
 
-Route::get('/discover', function () {
-    return view('display-product');
-})->name('discover');
+// Route::get('/discover', function () {
+//     return view('display-product');
+// })->name('discover');
 
 // Show the add product form
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
@@ -47,6 +48,12 @@ Route::get('/dashboard', function (){
 
 
 Route::get('/discover', [ProductController::class, 'show'])->name('discover');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::post('/cart/update/{productId}', [CartController::class, 'update'])->name('cart.update');
+Route::post('/cart/remove/{productId}', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
 
 

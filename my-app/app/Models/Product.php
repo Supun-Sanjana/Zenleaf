@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price'];
+    protected $fillable = ['name', 'description', 'price', 'category'];
 
     protected static function booted()
     {
@@ -18,4 +18,9 @@ class Product extends Model
             $product->product_id = 'P' . rand(10000, 99999);
         });
     }
+
+    public function getImageUrlAttribute()
+{
+    return $this->image ? asset('storage/' . $this->image) : asset('images/placeholder.jpg');
+}
 }
