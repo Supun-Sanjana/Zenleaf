@@ -85,4 +85,8 @@ ganarate controller ---------- php artisan make:controller ControllerName
 use --resource flag when need to create crud functions
 use --resource --model=ModelName flag when need to create Model file
 ..............................................................
+ -----------------------------------------------
+Establish image storage connection
+php artisan storage:link
 
+-------------------------------------------------

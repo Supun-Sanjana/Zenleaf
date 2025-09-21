@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price', 'category'];
+    protected $fillable = ['name', 'description', 'price', 'category', 'user_id'];
 
     protected static function booted()
     {
@@ -23,4 +23,10 @@ class Product extends Model
 {
     return $this->image ? asset('storage/' . $this->image) : asset('images/placeholder.jpg');
 }
+
+public function seller()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }

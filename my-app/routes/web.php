@@ -55,6 +55,10 @@ Route::post('/cart/update/{productId}', [CartController::class, 'update'])->name
 Route::post('/cart/remove/{productId}', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
+Route::get('dashboard', [ProductController::class, 'sellerProducts'])
+    ->middleware('auth')
+    ->name('dashboard');
+
 
 
 require __DIR__.'/auth.php';

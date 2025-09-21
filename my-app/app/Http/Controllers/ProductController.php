@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -65,6 +66,15 @@ class ProductController extends Controller
 
        // Send data to the Blade file
         return view('display-product', ['products' => $products]);
+    }
+
+    public function sellerProducts()
+    {
+        $seller = Auth::user();
+        $products = $seller->products()->get();
+
+        // 👇 Pass products to seller.blade.php
+        return view('seller.dashboard', compact('products'));
     }
 
     /**

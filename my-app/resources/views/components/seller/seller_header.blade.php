@@ -13,7 +13,7 @@
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden md:flex items-center gap-3">
+            <div class="hidden md:flex items-center gap-3 ">
                 <a href="{{ route('dashboard') }}"
                     class="text-gray-700 hover:text-emerald-600 transition-colors bg-emerald-100 font-semibold rounded-md py-2 px-4 shadow-sm hover:shadow-md">
                     Dashboard
